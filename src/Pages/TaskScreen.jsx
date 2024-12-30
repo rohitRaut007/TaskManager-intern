@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { format } from "date-fns";
+import Sidebar from "../components/Sidebar";
 
 function TaskScreen() {
   const [tasks, setTasks] = useState([
@@ -72,7 +73,9 @@ function TaskScreen() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
+     <div className="flex h-screen bg-gray-100">
+        <Sidebar />
+    <div className="flex-1 overflow-y-auto p-8">
       <div className="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-6">
         <h1 className="text-2xl font-bold text-gray-800 mb-6">Task Manager</h1>
 
@@ -167,6 +170,7 @@ function TaskScreen() {
           ))}
         </ul>
       </div>
+    </div>
     </div>
   );
 }
